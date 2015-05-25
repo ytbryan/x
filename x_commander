@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'commander/import'
+require 'koala'
+require 'twitter'
+require 'social/settings'
+
+default_command :help
+program :help_formatter, :compact
+program :version, '0.0.7'
+program :description, 'a tiny command line tool to cross post to Facebook and Twitter'
+
+command :post do |c|
+  c.syntax = 'x post [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    if args.first
+      post_to_facebook(args.first)
+      post_to_twitter(args.first)
+    end
+  end
+end
+
+command :accounts do |c|
+  c.syntax = 'x accounts [options]'
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+
+  end
+end
+
+command :active do |c|
+  c.syntax = 'x active [options]'
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    
+  end
+end
+
+
+
+def post_to_facebook
+  puts "post to facebook"
+end
+
+def post_to_twitter
+  puts "post to twitter"
+end
