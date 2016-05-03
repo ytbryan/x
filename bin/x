@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'xxxxx'
+
+Xxxxx::Base.start(ARGV)
